@@ -10,6 +10,8 @@ Two Types Polymorphism
 	1.Compile time polymorphism( Static Polymorphism) achieved vy method overloading  handled by Compiler
 
 	2.Run Time Polymorphism(Dynamic Polymorphism) achieved by Method overriding  handled by JVM
+
+
 Method Overloading
 1. same method name
 2. method should be in same class
@@ -23,3 +25,4 @@ Method Overriding
 1. same name
 2. diffrent class 
 3. same arguments
+4.Inheritance (IS-A Relationship)
