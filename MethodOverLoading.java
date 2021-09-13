@@ -3,7 +3,7 @@ public class MethodOverLoading {
         System.out.println("1");
     }
     void show(){
-        System.out.println("2");
+        System.out.println("2");  //smahli
     }
 
     public static void main(String[] args) {
