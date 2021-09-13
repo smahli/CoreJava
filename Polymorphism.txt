@@ -1,0 +1,25 @@
+          POLYMORPHISM
+        _________________
+
+Many forms
+Example Water has different forms
+Shapes has diffrent forms 
+sound has diffrent form
+
+Two Types Polymorphism 
+	1.Compile time polymorphism( Static Polymorphism) achieved vy method overloading  handled by Compiler
+
+	2.Run Time Polymorphism(Dynamic Polymorphism) achieved by Method overriding  handled by JVM
+Method Overloading
+1. same method name
+2. method should be in same class
+3. diffrent argument
+	number of argument
+	sequence of argument
+	type of argument
+
+
+Method Overriding
+1. same name
+2. diffrent class 
+3. same arguments
