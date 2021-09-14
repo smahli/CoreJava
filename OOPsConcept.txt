@@ -1,0 +1,102 @@
+OOP : Object oriented Programming System/Structure(smalltalk,Java, C sharp , C++ Python)
+1. Class
+2.Methods
+3.Objects
+	Different ways of Creating Obejct
+	Programs
+	How to initialize Object
+OOP is a programming paradigm/Methodology
+
+		object oriented paradigm
+		structural paradigm 
+		functional paradigm
+		logical paradigm
+
+Six main pillars of OOPs are 
+1.class
+2.Objects and Methods
+3.Inheritance
+4.Polymorphism
+5.Abstraction
+6.Encapsulation
+
+			CLASS
+		_____________________
+
+1.Class is the collection of Objects
+2.Class is not a real world entity. It is just a template/blueprint/prototype
+3.Class does not occupy memory(Since it not  real world entity).
+4.syntax   access-modifier class ClassName{
+	   methods 
+	   constructors
+	   fields
+	   blocks
+	   nested class
+
+	   }
+
+			METHODS
+	         __________________
+1. A set of codes which performs a perticular task
+2. Advantage of methods
+	a) Code reusability
+	b) Code optimization
+3 Syntax	 access-modifier return type methodName(List of parameters){
+		 }
+
+			Object
+		____________________
+1. Object is an instance of class
+2. Object is real world entity.
+3. Object occupies memory.
+
+Object consist of :
+	1.Identity
+	2.state/Attributes
+	3.Behaviour
+
+How to create an object: 
+	using "new" Keyword
+	using Instance()method
+	using clone() menthod
+	using deserialization
+	factory method
+
+	creation of method using "new keyword"	
+	1.declaration: Animal kishu;
+	2.Instantiation: kishu = new  
+	3.initialization: Animal(constructor)  "line 2 ans 3 are used in same line"
+in one line  syntax: " Animal kishu = new Animal();" 
+
+
+How to initialize object 
+		1. By reference variable
+		2.By Constructores
+		3. By using method
+		CONSTRUCTOR
+	__________________________
+
+1. Constructor is a block(similar to method having same name as class Name)
+2. Constructor does not have return type even "void ".
+3. the only modifiers applicable for constructors public protected default and private.
+4.It executes automatically when we creates Object.
+
+Constructor is used to initialize object.
+
+Types of Constructor 
+1. Default Constructor(no argument Constructor) Created by Compiler not by JVM
+2.No argument Constructor (User defined)
+3.parametrized Constructor 
+
+
+ 
+
+	
+
+
+
+
+
+
+
+
