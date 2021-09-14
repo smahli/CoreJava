@@ -3,6 +3,7 @@ public class ThisUse3 {
         System.out.println(" No argument constructor");
     }
     ThisUse3(int i){
+        this();
         System.out.println("Parameterised constructor");
     }
 
