@@ -26,3 +26,33 @@ public class ThisTest {
 
     }
 }
+
+
+Six uses of "This" Keyword
+1. This keyword can be used to refer current class instance variable
+2. this keyword can be used to invoke current class method.
+3. this() can be used to invoke current class constructor.
+4. this can be used to pass as an argument in the method call.
+5. this can be used to pass as an argument in the constructor  call 
+6. this can be used to return the current class instance from the method.
+
+
+second use explain in 2. example code.
+
+public class ThisUse2 {
+
+    public void show(){
+        System.out.println("Hello this is Show method");
+    }
+    public  void display(){
+        show(); // show() and this.show() is same  as if we don't use this keyword then
+                // compiler will automatically add "this " while invoking the method
+    }
+
+    public static void main(String[] args) {
+        ThisUse2 t2 = new ThisUse2();
+        t2.display();
+    }
+}
+
+
