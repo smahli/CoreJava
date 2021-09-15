@@ -24,3 +24,4 @@ static variables belong to the class not object
 When a variable is declared as static , then a single copy if variable is
 created and shared among all objects at class level.Thus comapany name 
 i.e freelancer will be shared among s1 , s2 and all the objetcs
+
