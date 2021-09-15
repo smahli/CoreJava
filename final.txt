@@ -1,2 +1,58 @@
 FINAL KEYWORD
 ________________
+
+ final keyword can be used with variables class and methods 
+
+
+1. with variable: if we create any final variable it becomes constant , we cannot
+change the valueof the final variable
+
+2.with method : if we create any final method , we cannot override it.
+
+
+3. with class  : if we create any final class, we cannot extend it or inherite it
+
+
+with variable
+
+public class FinalUse {
+    public static void main(String[] args) {
+       final int i=10;
+      //  i =i+20;  // here compiler will throw an error because once final variable declared cannot be changed thereafter
+        System.out.println(i);
+    }
+}
+
+
+with method
+
+public class FinalMethod {
+    final void show() {
+        System.out.println(" I am in final method");
+    }
+
+}
+class FinalMethod1 extends FinalMethod {
+  /*  void show(){
+        System.out.println(" I am in Final Method 1");    cannot override method because we have already assign final keyword to the method
+
+    }*/
+  public static void main(String[] args) {
+      System.out.println("hello");
+  }
+}
+
+
+with class
+
+final class Final {
+    void show() {
+        System.out.println("Welcome to final class");
+    }
+}
+class Final2 extends Final{  // extned final class cannot be inherited because of the final keyword
+    public static void main(String[] args) {
+        System.out.println("Welcome to the world of java");
+    }
+
+}
