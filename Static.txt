@@ -1,1 +1,26 @@
-3 programs
+	Static 
+    ________________
+
+Access Modifiers 			Non Access Modifier
+------------------                  -----------------------------   
+Public				Static
+private 			final
+protected 			abstract
+default(No modifier)		synchronized
+				transient
+				volatile
+				strictfp
+
+we use static with
+1. variable(we don't use with local variable)
+2. methods 
+3. block
+4. inner class (don't use with outer class)
+
+
+static variables belong to the class not object
+
+
+When a variable is declared as static , then a single copy if variable is
+created and shared among all objects at class level.Thus comapany name 
+i.e freelancer will be shared among s1 , s2 and all the objetcs
