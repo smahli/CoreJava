@@ -56,3 +56,19 @@ class Final2 extends Final{  // extned final class cannot be inherited because o
     }
 
 }
+
+
+
+final finally amd finalise
+
+final                           finally                   	    finalize
+1.keyword                   1. Block                      	  1. Method
+
+
+2. used with variable       2.   used with try either try or 	2. method is override for an object
+	method			try-catch block
+	class
+
+3.already explained        3. already explained			3.protected void finalize() throws, throwable{
+								// cleanup code 	
+								}
