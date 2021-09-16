@@ -1,1 +1,26 @@
-ssssss
+STRING
+___________________
+
+String is non-primitive data types because it references a memory location where data is stored in the heap memory (or String Cnstant Pool) i.e. it,
+refrences to a memory where an object is actually placed. And thus the variable of a non primitive data type is also called refrence data types or 
+object reference variable. This object refrence variables lives on the stack memory and the object to which it points always lives on the heap memory
+the stack holds a pointer to the object on the heap. Thus all non- primitive data types are simply called which are created by instatiting a class.
+1.String is a non primitive data types
+2.String is the sequence of characters (Array of characters)
+	char [] c ={'s', 'h','i','w'}    //CharSequence (Interface)
+
+3.String is a class.
+	public final class String extends Object Implements CharSequence,Serialisable,Comparable {
+		
+	}
+
+4.	 1. String s = new String(); // this s object is IMMUTABLE object
+
+       	2. String s = "Shiwshankar"  // this will also create object
+				// what is the difference between line 1 and line 2 why line 2 is more used
+5.To create String , There are three classes :
+	1. String
+	 2.StringBuffer 
+	3.StringBuilder
+
+
