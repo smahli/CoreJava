@@ -30,3 +30,23 @@ public class CheckedAndUnchecked {
                                     // therefore this is run time exception or unchecked exception
     }
 }
+
+
+Checked Exception(COMPILE TIME EXCEPTION)                       unchecked Exception(RUNTIME EXCEPTION)
+________________________________________________________________________________________________________
+
+1. Chekced exceptions are the exceptions that are checked          1. Unchecked Exceptions are the exceptios that are 
+and handles  at the compoile time 				      not checked at the compile time.
+
+2. The program gives a compilation error if a method throws        2. The program compiles fine because compiler is not able to
+   a checked exception						       check the exception.
+
+3.If some code within a method throws a checked exception,         3. A method is not forced by compiler to declare the unchecked exceptions
+   then the method  must either handle the exception or it 	      thrown by its implementation. Generally , such methods almost always
+   must specify the exception using throws keyword		       do not declare them, as well
+
+4. A checked exceptions occur when the chances of failure are      4. Unchecked exceptions occurs mostly due to programming mistakes
+   too high.
+
+5. They are direct subclass of Exception class but do not          5. They are direct subclass of Runtime Exception class.
+    inherit from RuntimeException
