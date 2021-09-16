@@ -1,0 +1,35 @@
+the equal() method compares the content of given two strings. if any
+character is not matched , it returns false. if all character are matched it returns true.
+equals() and == are different.
+
+
+The eualsIgnoreCase() method is used to compare a specified String to another
+String ignoring case considerations i.e. lower case or upper case . Two strings are considerd 
+equal ignoring the case if they are of the same length and corresponding characters is the two strings are equal ignoring the case.
+
+
+compareTo() and compareToIgnoreCase() method is used for comparing two strings 
+lexicographically . Each character of both the strings is converted into a unicode 
+value for comparison. if both the strings are equal then this method returns 0 else
+it returns positive or negative value.
+
+
+
+import java.util.Scanner;
+
+public class CompTwoStr {
+    public static void main(String[] args) {
+        System.out.println(" Enter First String");
+        Scanner sc = new Scanner(System.in);
+        String  str1 = sc.nextLine();
+        System.out.println("Enter Second String");
+        String str2 = sc.nextLine();
+
+        //System.out.println(str1.equals(str2)); // shiw and shiw same here but shiw and Shiw is different
+       // System.out.println(str1.equalsIgnoreCase(str2));  // Shiw and shiw is same here It will print true
+
+        //System.out.println(str1.compareTo(str2));
+        System.out.println(str1.compareToIgnoreCase(str2));
+
+    }
+}
