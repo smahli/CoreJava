@@ -48,3 +48,50 @@ public class CountTest {
 }
 
 
+Rules for static methods
+_____________________________
+
+1."static " methods belong to the class not to the object
+2. A "static " method can be accessed directly by class name and does not need any object.
+3. A "static " method can access only static data . It cannot access 
+non- static data (instance data)
+4. A "static" method can call only other static methods and cannot call a non static method.
+5. A "static" method cannot refer to "this " or "super " keyword in anyway
+
+
+
+Static Block
+_______________
+
+static block executes automatically when the class is loaded in the memorys
+
+
+public class StaticBlock {
+    static{
+        System.out.println(" Hello This is static block");  // static block executes automatically when class is loaded in the memory
+                                                            // version 1.6 or earlier supports automatically execution without main method
+                                                            // version 1.6 or later required main method to execute static block.
+
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Hello I am in the  main method ");  //  first static method will be called then main method .
+    }
+}
+
+
+
+we can print "hello world" without main method using static block but it requires version 1.6 or earlier
+
+
+
+use of static Block
+____________________
+
+static block is executed at class loading , hence at tha time of class loading if we want to perform any activity, we have to define thatinside static block
+for example native methods .
+
+static block is used to initialise static variables
+
+
+
