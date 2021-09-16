@@ -4,7 +4,9 @@ create an object and that object will store three things :
 2. description
 3. stack trace
 
-exception object created then exception object  pass this information to jvm . if jvm do not handle it then . jVM will furthur pass this information to default exception handler and same time jvm abnormally terminates the program and Default exception hanldler print what type of Exception is
+exception object created then exception object  pass this information to jvm . 
+if jvm do not handle it then . jVM will furthur pass this information to default exception handler and same time jvm abnormally terminates 
+the program and Default exception hanldler print what type of Exception is
 
 
 we can handle the exception using 5 keywords 
@@ -103,6 +105,97 @@ public class MethodsPrintExcInfo {
 
 
 }
+
+
+finally block Syntax
+_______________
+
+ finally is the block that is always executed whether
+ exception is handled or not
+
+
+Syntax:
+
+try    
+	{
+		// Risky Code
+
+	}
+
+catch(Exception e )
+	{
+		//handling code
+
+	}
+
+finally
+	{
+		//Clean Up code
+
+	}
+__________________________________________
+otherSyntax
+
+
+
+try
+	{
+
+		// Risky Code
+		//file open
+		//read write
+	}
+
+finally
+	{
+		//Clean Up code
+		//file close
+
+	}
+
+example code   
+
+public class finally1 {
+
+    public static void main(String[] args) {
+        try {
+            int i=100, b=0, c;
+            c= i/b;
+            System.out.println(c);
+
+        }
+        catch (Exception e){
+            System.out.println("Exception  "+e);
+        }
+        finally {
+            System.out.println("I am in finally block");
+
+        }
+    }
+}
+
+
+
+Why do we use FINALLY BLOCK
+_____________________________
+
+if we have opened in Resources/file in  try block then we close that file in finally block.
+if any exceprtion occurs while reading or writing a file , then below code will not execute 
+and thus resource will not close.
+
+
+Rules of usage finally block
+
+1.we can use multiple catch block with one try block but we can use only single finally block wwith one try block , not multiple
+2.the statements presents in the finally block execute even if the try block contains control transfer statements (i.e. jump statements) like return, break or continue
+3. FINALLY BLOCK WILL NOT EXECUTE IF 
+		1. the possibilities that disturbs the execution of finally block are 
+			using of the System.exit() method.
+		2. causing a fatal error that causes the process to abort(eg out of memory error)
+		3. Due to an exception arising in the finally block
+		4. the death of the thread.
+
+
 
 	
 
