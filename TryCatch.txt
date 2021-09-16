@@ -1,1 +1,56 @@
-aaaaaa
+Whenever there is exception, the method in which exception occurs will 
+create an object and that object will store three things :
+1. exception name 
+2. description
+3. stack trace
+
+exception object created then exception object  pass this information to jvm . if jvm do not handle it then . jVM will furthur pass this information to default exception handler and same time jvm abnormally terminates the program and Default exception hanldler print what type of Exception is
+
+
+we can handle the exception using 5 keywords 
+1. try
+2. Catch
+3. finally
+4. Throw.
+5.throws
+
+Syntax:
+
+try{
+//risky code
+}
+catch(ExceptionClassName ref.var.name){
+//handling  code
+}
+
+
+
+public class TryCatch {
+    public static void main(String[] args) {
+        System.out.println("1");
+        try {
+            System.out.println("2");
+
+             int a = 100;
+             int b=0;
+             int c;
+            System.out.println("3");
+
+             c=a/b;
+            System.out.println("4");
+
+            System.out.println(c);
+            System.out.println("5");
+
+        }
+         catch (ArithmeticException e){
+             System.out.println("6");
+
+             System.out.println(e);
+             System.out.println("7");
+
+         }
+        System.out.println("hello");
+
+    }
+}
