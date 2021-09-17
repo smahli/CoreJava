@@ -1,1 +1,59 @@
-asssss
+String Constant Pool(String Literal POol is an area in 
+heap memory where java stores String Literal values.
+
+1. MethodArea(version 1.6 or earlier)
+2. HeapArea(1.7 version )(SCP)
+3. StackArea
+4. PC Register
+5.NativeMethodArea
+
+
+
+String Constant Pool(Heap Area)
+
+String s1 = new String("shiw")  // creates two object  in HeaP Area as well as in SCP
+
+
+String s2 = "Rahul";  // creates only one object in SCP
+
+The String objects present in SCP are not applicable for Garbage Collection because a refrence variable 
+internally is maintained by JVM 
+String s3 = new String("Ramesh")    // creates two ojbect one in Heap area another in SCP .
+String s4 = new String("shiw")    //   creates only one object in Heap Area other already created in SCP(if literal is same e.g. "shiw") by object s1(that is not deleted)
+
+
+
+What is String Immutable  Why String Object is Immutable in Java
+
+
+
+String s = new String ("shiwshankar")
+s.concat(" java");    // or + operator is used to concatanate 
+System.out.println(s)  // it will still print Shiwshankar and not print shiwshankar java  because String objects are immutable 
+			// in any case if try to change the string then it will not change though it will create another object  and point to the "shiwshankar" litearl
+
+s= s.concat(" python")  // it will also create new object in the heap area but now it will point to the current literal "shiwshankar python" because of the "= " statement
+System.out.println(s)
+
+Why String Objects are Immutable???
+
+
+String city1 = "Ranchi"   // first it will checkl whether "ranchi " literal created or not if not
+			  // creates an object in String Constant Pool and city1 object points to "ranchi".
+
+String city2 "Ranchi"  // it will not create any object as "Ranchi " already created  but it will point to the same literal.
+ 
+String city3 "Delhi"   // It will create another object in SCP
+
+
+Why Strings are IMMUTABLE 
+
+Strins are immutable in java because String objects are cached in String 
+pool. since cached String Literals are shared between multiple persons there is always a risk, where one person's action 
+would affect all another person's for example, if one person changes its city from "Ranchi" to "Delhi", all other persons will also get affected
+
+
+
+
+
+
