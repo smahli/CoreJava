@@ -24,3 +24,22 @@ the stack holds a pointer to the object on the heap. Thus all non- primitive dat
 	3.StringBuilder
 
 
+
+
+Important features of String Class
+
+1. String Constant Pool : It is speacial memory location in heap area 
+	which stores String Literals .
+2. Immutable Objects : The String objects are immutable which means
+	once String object is created its data or state can't be changed but a new String object is created
+3. + Operator for Strings : multiple Strings can be concatanated using + operator .
+4. Security : The Parameters used for network connections, database connection URLs, Username/password , etc are represented in Strings . It it was mutable,
+	thes parameters could be changed easily.
+5. Class Loading : String is used as an arguments for class loading.
+	if mutable , It could result in the wrong class being loaded
+	(because mutable objects change their state).
+
+6. Synchronization and concurrency: making String immutable automatically makes them 
+	thread safe thereby solving the synchronization issues.
+7. Memory management : when the compiler optimises our String objects , it seems that if two objects have the smae value (a="test",b="test") and thus we need only one string object
+	(for both a and b; these two will point t the same object
