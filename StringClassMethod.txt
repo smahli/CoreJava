@@ -1,1 +1,69 @@
-sssss
+== Oprator and equals() method 
+________________________________
+
+== Operaetor is used for refrence comparison(address comparison ).
+It means == operator checks if both objects point to the same memory location or not.
+
+.equals() method is used for content comparison(In String class). It means .equals() methods is used to check object value.
+
+for example 
+
+String s1 = new String("shiwshankar");
+String s2 = new String("shiwshankar");
+System.out.println(s1==s2)  // It will return false 
+
+
+
+String s3= "Shambhu"
+String s4 = "Shambhu"
+
+System.out.println(s3==s4)  // It will return true .
+
+
+why Because == operator is used for reference comparison(address comparison). now it 
+is(== operator ) checking both objects pointing to the same memory location.
+
+
+11 methods of the Object class 
+1. clone()
+2.equals(Object obj)
+3. finalize()
+4. getClass()
+5. hashCode()
+6. notify()
+7. notifyAll()
+8. toString()
+9. wait()
+10. wait(long timeout)
+11. wait(long timout int nanos)
+
+class Object{
+	public boolean equals(Object obj){
+	return(this==obj)    // .equals() method of Object class is used to compare the reference
+			// or address of two objects .i.e if two objects point to the same memory location or not
+
+	}
+}
+
+
+class String extends Object{    
+	@override
+	public boolean equals(Object obj){   // 
+		//statements          		// .equals method of String class is used for content comparison i.e. it is used to 
+	// check object value
+	}
+
+}
+
+class Demo{
+	public static void main(){
+	
+	String s1= new String("shiwshankar");
+	String s2 = new String("shiwshankar");
+	System.out.println(s1==s2) ;  // false because it checks memory locations they are different objects.
+	System.out.println(s1.equals(s2)) ;     true because it checks content 
+	
+	}
+
+
+}
