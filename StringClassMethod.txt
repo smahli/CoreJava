@@ -97,3 +97,22 @@ collection is not applicable in SCP, which is a security threat.
 With an array, you can explicitly wipe the data after you are done
 with it.
 You can over write the array with anything you like , and the password won't be present anywhere in the system - even before garbage collection.
+
+
+length() method isEmpty() and trim() in java
+___________________________________________________
+
+
+The String length() counts the number of characters in the string and returns it in integer. This method returns the length of any string which is equal to the number of 16 bit Unicode characters in the string.
+
+
+isEmpty() method of String class is included in java since JDK 1.6
+This method returns true if the given string is empty , else it returns false, or can
+say that this method returns true if the length of the string is 0.
+
+
+trim() method of String class eliminates only leading and trailing spaces 
+The Unicode value of space character is '\u0020'.The trim() method in java checks 
+this Unicode value before and after the string , if it exists then removes the spaces and returns the ommited String.
+
+
