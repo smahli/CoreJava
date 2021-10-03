@@ -123,3 +123,59 @@ Creating thread  ------------->  runnable -------------> Running -------------> 
 
 
 
+
+
+
+Creating thread using Interface 
+
+Example code
+
+
+Step 1.   step 1: This is first step to implement the Runnable Interface
+
+
+Step 2 :  override the run method
+
+step 3 :   is creating object of the class
+
+step 4: create an object of thread class and pass the parameter in constructor of thread class
+
+Step 5:  invoke the thread
+
+
+
+public class ThreadStart implements Runnable {  // step 1: This is first step to implement the Runnable Interface
+
+
+    @Override
+    public void run() {   // step 2: override the run method
+
+        // Thread task has to be executed
+
+    }
+
+    public static void main(String[] args) {
+
+        ThreadStart t1 = new ThreadStart();   // step 3 : is creating object of the class
+        Thread th = new Thread(t1);     // step 4: create an object of thread class and pass the parameter in constructor of thread class
+        th.start();//  Step 5:  invoke the thread
+
+
+
+    }
+}
+
+
+which method is better ?
+
+
+Implements better  WHY?
+
+because java does not support multiple inheritance 
+
+exapmle 
+class A extends B,Thread //   not possible beacause java does not support multiple inheritance
+
+but 
+class A extends B, implements Runnable   // this method will work
+
