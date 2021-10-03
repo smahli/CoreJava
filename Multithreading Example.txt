@@ -1,0 +1,95 @@
+performing single task from single thread.
+performing single task from multiple threads. 
+performing multiple task from single thread.  (Not Possible )
+performing multiple task from multiple threads.
+
+
+
+
+performing single task from single thread.
+
+
+import java.util.Scanner;
+                                    // for creating thread we have to follow these 4 steps that are mentioned below
+public class VLCMultiThread extends Thread {      // Step 1 extends the "Thread" class
+    public void run(){         //Override  the run() method
+
+        // task that performed by Thread
+        System.out.println("Thread Task");
+
+    }
+    public static void main(String[] args) {
+        VLCMultiThread t = new VLCMultiThread();  // Create an object of the class
+
+        t.start();  //start the thread using thread method    ( first thread)
+    }
+}
+
+
+
+
+performing single task from multiple threads 
+
+
+example code 
+
+public class multiThreadSingleTask extends Thread{
+
+    //    performing single task from multiple threads.
+
+    public void run(){
+        System.out.println(" thread example ");
+    }
+
+    public static void main(String[] args) {
+        multiThreadSingleTask m = new multiThreadSingleTask();
+        m.start();     // thread 1
+
+        multiThreadSingleTask m2 = new multiThreadSingleTask();
+        m2.start();    // thread 2
+    }
+
+}
+
+
+
+
+
+performing multiple task from multiple threads.
+
+
+code example
+
+public class MultitaskMultiThread extends Thread{
+    @Override
+    public void run(){
+        System.out.println(" thread example 1");
+    }
+
+}
+class Class2 extends Thread{
+    @Override
+    public void run(){
+        System.out.println("Thread example 2");
+    }
+
+}
+class  Class3 extends Thread{
+    @Override
+    public void run(){
+        System.out.println("Thread example 3");
+    }
+}
+class  Main extends Thread{
+    public static void main(String[] args) {
+        MultitaskMultiThread t1 = new MultitaskMultiThread();
+        t1.start();
+        Class2 t2 = new Class2();
+        t2.start();
+        Class3 t3 = new Class3();
+        t3.start();
+    }
+}
+
+
+
