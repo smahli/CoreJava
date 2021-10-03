@@ -1,0 +1,49 @@
+MULTITASKING
+__________________
+
+Performing multiple task at single time. It increases the performance of cpu
+
+We can achieve multi tasking by Two ways 
+1. Process based multitasking 
+2. Thread based multitasking 
+
+
+
+MULTIPLE PROCESSING     : when one system is connected to multiple processor in order to complete its task
+___________________
+
+
+MultiThreading  :     executing multiple task(sub process or thread) at the same time 
+
+
+		Uses of multithreading example games, animation and software 
+
+Multithreading is best suitable at programming level
+
+Java provides predefined API for multithtreading.
+
+Difference between thread and process 
+
+	process 					Thread
+
+1. An program which is in execution stage	1. It is subpart of the process(task)
+
+2. Process is HEAVY weigth			2. thread is LIGHT weigth
+
+3 It takes more time for  CONTEXT SWITCHING 	3. It takes less time for CONTEXT SWITCHING
+
+4.Communication It takes more time 		4. Takes less time for in INTERTHREAD communication
+for INTERPROCESS communication 
+
+5. Each process has different ADDRESS SPACE	5. Threads share same ADDRESS SPACE 
+
+6. process does not depend on other process	6. Threads depend on each other 
+	(all individual ) DEPENDENCY		
+
+7. Process does not require SYNCHRONIZATION 	7. Requires SYNCHRONIZATION
+
+8. process requires more RESOURCE  CONSUMPTION 	8. requires less RESOURCE CONSUMPTION
+
+9. requires more time creation 			9. requires less time creation 
+
+10. Requires more time termination 		10. requires less time termination
