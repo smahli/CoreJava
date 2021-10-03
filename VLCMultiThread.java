@@ -4,6 +4,7 @@ public class VLCMultiThread extends Thread {      // Step 1 extends the "Thread"
     public void run(){         //Override  the run() method
 
         // task that performed by Thread
+        System.out.println("Thread Task");
 
     }
     public static void main(String[] args) {
