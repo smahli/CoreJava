@@ -95,3 +95,31 @@ class music {
 }
 
 
+
+
+thread life cycle in Java
+Five states  
+
+1. Creating thread
+2. Runnable 
+3. Running
+4.dead state 
+5. Non Runnable state
+
+
+actionwise 
+_____________
+					JVM will allocates	 When the task is completed  
+					the processor 
+
+Creating thread  ------------->  runnable -------------> Running -------------> Dead
+					|			|
+					|			|
+					|			|
+					|		________|
+					Non- Runnable 
+
+					sleep() wait() suspended() etc
+
+
+
