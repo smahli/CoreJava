@@ -47,3 +47,51 @@ for INTERPROCESS communication
 9. requires more time creation 			9. requires less time creation 
 
 10. Requires more time termination 		10. requires less time termination
+
+
+Two ways of creating thread
+
+1. By using thread( class)
+2. By using runnable (interface)
+
+
+By Using Thraed Class
+
+steps 1. Extends the Thread class
+step 2. Over ride the run method
+step 3. Create an object of the class
+step 4.  Start the thread using start method
+
+
+
+for example
+
+
+
+import java.util.Scanner;
+                                    // for creating thread we have to follow these 4 steps that are mentioned below
+public class VLCMultiThread extends Thread {      // Step 1 extends the "Thread" class
+    public void run(){         //Override  the run() method
+
+        // task that performed by Thread
+
+    }
+    public static void main(String[] args) {
+        VLCMultiThread t = new VLCMultiThread();  // Create an object of the class
+
+        t.start();  //start the thread using thread method
+    }
+}
+class video {
+    void playVideo(){
+        System.out.println("Video Playing ");
+
+    }
+}
+class music {
+    void playMusic(){
+        System.out.println("Music Playing");
+    }
+}
+
+
