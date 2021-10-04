@@ -1,0 +1,78 @@
+public class Thread implements Runnable {
+
+    //constructors
+    1.Thread()
+    2.Thread(Runnable target)
+    3.Thread(String name)
+    4.Thread(Runnable target, String name)
+    5.Thread(ThreadGroup tg,Runnable target)
+    6.Thread(Thread group tg , String name)
+    7.Thread(Thread group tg , Runnable target, String name)
+    8.Thread(Thread group tg, Runnable target,String name, Long String Size )
+
+
+        // methods
+
+   1. basic method 
+
+ run()
+ currentThread()
+ start()
+ isalive()
+
+
+2.  Naming method  
+	getName()
+                   
+	 setName(String name)
+	
+                       
+3.  Deamon Thread Method 
+	setDaemon(boolean b)
+                           
+	 isDaemon()
+                               
+4.  Priority based method
+				
+	
+	getPriority()
+                                   
+	 setPriority(int p)
+5. Preventing Thread execution method
+
+
+            sleep(time)
+                                          
+	  yield()
+                                               
+	 join()
+                                                   
+	 suspend() // not in the java now
+                                                       
+	 resume()
+                                                           
+	 stop()
+                                                               
+	 destroy() // not in the java by now
+
+                                                                 
+6. Interupting methods
+   interrpt()
+                                                                  
+      isInterrupted()
+                                                                           
+ interrupted()
+
+7. Interthread communication
+
+wait()
+notify()
+notifyall()
+
+all belongs to object class not thread class
+ but used in Thread class
+
+
+
+
+}
