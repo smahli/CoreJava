@@ -20,5 +20,8 @@ public class Thread1 extends Thread {
      //   System.out.println(Thread.currentThread().getName());  // we have changed the name of main thread to shiw
        // System.out.println(10/0);   // can check by this exception method
 
+
+        System.out.println(Thread.currentThread().isAlive());
+
     }
 }
