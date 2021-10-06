@@ -1,0 +1,11 @@
+Join() : if a Thread wants to wait for another Thread to complete 
+its Task then we should use join() method.
+
+
+public final void join() Throws InterruptedException
+
+public final synchronized void join(long milli second) Throws InterruptedException
+
+public final synchronized void join(long milli second, int nano second)
+
+
