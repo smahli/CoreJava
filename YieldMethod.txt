@@ -1,0 +1,43 @@
+Yield() Which stops the current executing thread & give a chance to other 
+Thread for execution.
+
+working Java 5 : internally it uses sleep() method but in Java 6
+		Thread provides hint to Thread scheduler
+		, then it depends on the thread scheduler to accept or ignore the hint
+
+
+Method Prototype
+_________________
+
+public static native void yield();
+
+
+output may vary
+		
+
+
+
+import java.lang.Thread;
+public class YieldMethod extends Thread {
+    @Override
+    public void run() {
+        for (int i=1;i<=5;i++){
+            System.out.println(Thread.currentThread().getName() +" : "+i);
+        }
+    }
+
+    public static void main(String[] args) {
+        YieldMethod y1 = new YieldMethod();
+        y1.start();
+        Thread.yield();
+        for (int i=1;i<=5;i++){
+
+            System.out.println("Main Thread"+i);
+        }
+
+
+
+    }
+}
+
+
