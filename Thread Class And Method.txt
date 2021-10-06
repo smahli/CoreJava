@@ -146,9 +146,15 @@ public class Thread2 extends Thread {
     }
 
 }
+		// Hence we Cannot create main Thread as Daemon Thread 
+		// daemon Thread's life depend upon the thread 
 
 
+		// daemon Thread nature :It inherites the properties from its Parent thread 
+		//JVM role on the daemon Thread : It will kill the daemon thread and doesnot depend upon The daemon Thread It will take daemon thread to dead state
 
+		//Most of the times daemon thread has low priority but according to us we can change the priority.
+		
 
 
 
