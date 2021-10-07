@@ -1,0 +1,45 @@
+These Three methods temporary stops the Thread execution
+
+
+
+Property          Sleep   						  Yield 						join
+	
+
+
+Purpose     If any Thread does not want to perform any 		It stops the current executing Thread and provide chance 	If a thread wants to wait for another Thread
+		operation for particular time     		to another thread of same or higher priority to execute  	to complete its task
+
+
+
+
+exapmle  	  Timer, blinking bulb 				billing counter,						licence department
+
+
+
+
+
+
+
+How the Thread		automatically after provided 		automatically invokes by					Automatically invokes after another Thread
+Invokes again?		time period				Thread Scheduler.						complete its task
+
+
+Methods 		sleep(long ms)				yield()								join()
+			sleep(long ms , int ns)											join(long ms)
+																join(long ms, int ns)
+
+Is method Overloaded	Yes					No									Yes
+
+
+Exeption		Yes(InterruptedException)		No											Yes(InterruptedException)
+
+
+
+
+Is method final?	No					No									Yes
+
+
+Is method Static 	Yes 					Yes									No
+
+
+Is method native 	Yes/sleep(long ms)			Yes									No
