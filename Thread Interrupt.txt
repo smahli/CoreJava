@@ -1,0 +1,22 @@
+Interrupt Method
+________________________________--
+
+
+
+It is used to interrupt an executing Thread.
+
+Interrupt() method will only works when the thread is in sleeping or waiting state 
+sleep() or wait()
+
+if a thread is not in sleeping or waiting state 
+then calling an interrupt() method will perform normal beahviuor 
+
+
+when we use interrupted() method it throughs an exception Interrupted Exception
+
+
+
+public void interrupt(){
+
+
+}
