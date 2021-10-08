@@ -53,3 +53,65 @@ public class InterruptMethod extends Thread {
     }
 }
 
+
+
+
+1. interrupted() & IsInterupted method is used to check whether a thread is interrupted or nor
+
+2. interrupted() method clears the interrupted status from true to false if thread is interrupted  
+
+3 isInterrupted() method does not clear the interrupt status .
+
+
+4. Interrupted () method will change the result if called twice
+
+
+5 . isInterrupted () method will not change the result if called twice
+
+
+6. Syntax   public static boolean interrupted(){     }
+
+
+7 Syntax public boolean isInterrupted
+
+
+
+
+
+see the diffrence in example code
+
+
+
+
+
+import java.lang.Thread;
+public class InterruptedVSisInterrupted extends Thread {
+
+    @Override
+    public void run() {
+        //System.out.println(Thread.interrupted());
+        System.out.println(Thread.currentThread().isInterrupted());
+        try{
+
+        for (int i=0;i<=5;i++){
+            System.out.println(i);
+            Thread.sleep(1000);
+            System.out.println(Thread.interrupted());
+
+        }
+        }
+
+        catch (Exception e){
+            System.out.println(e);
+        }
+    }
+
+
+    public static void main(String[] args) {
+        InterruptedVSisInterrupted t = new InterruptedVSisInterrupted();
+        t.start();
+
+        t.interrupt();
+    }
+}
+
