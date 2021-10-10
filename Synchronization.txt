@@ -107,3 +107,78 @@ Seats Booked Successfully
 -3 Seats left
 
 Process finished with exit code 0
+
+
+
+
+
+
+After Synchronization 
+
+
+
+
+
+we use synchronize keyword
+
+
+
+example code
+
+
+import java.lang.Thread;
+public class BookTheatreSeat {
+    int totalSeat =10;
+     synchronized void bookSeat(int seat){
+        if (totalSeat>=seat){
+            System.out.println(Thread.currentThread().getName()+ " Seats Booked Successfully");
+            totalSeat=totalSeat-seat;
+            System.out.println(totalSeat+" Seats left");
+
+        }
+
+        else{
+
+            System.out.println(Thread.currentThread().getName()+" Seat Cannot be booked");
+            System.out.println(totalSeat+" Seats Left");
+        }
+
+    }
+}
+class MovieBookAPP extends Thread{
+    static BookTheatreSeat b;
+    int seats;
+    @Override
+    public void run() {
+
+        b.bookSeat(seats);
+
+    }
+
+    public static void main(String[] args) {
+        b= new BookTheatreSeat();
+        MovieBookAPP obj = new MovieBookAPP();
+        obj.seats=6;
+        obj.start();
+
+        MovieBookAPP amit = new MovieBookAPP();
+        amit.seats=7;
+        amit.start();
+
+    }                  
+}
+
+
+
+
+OUTPUT
+
+
+"C:\Program Files\Eclipse Foundation\jdk-11.0.12.7-hotspot\bin\java.exe" "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2021.2.1\lib\idea_rt.jar=59726:C:\Program Files\JetBrains\IntelliJ IDEA 2021.2.1\bin" -Dfile.encoding=UTF-8 -classpath C:\Users\Asus\IdeaProjects\String\out\production\String MovieBookAPP
+Thread-0 Seats Booked Successfully
+4 Seats left
+Thread-1 Seat Cannot be booked
+4 Seats Left
+
+Process finished with exit code 0
+
