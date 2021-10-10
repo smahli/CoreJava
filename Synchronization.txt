@@ -182,3 +182,112 @@ Thread-1 Seat Cannot be booked
 
 Process finished with exit code 0
 
+
+
+
+
+Synchronized Block Example code 
+
+
+import java.lang.Thread;
+public class BookTheatreSeat {
+    int totalSeat =10;
+     /*synchronized*/ void bookSeat(int seat){                // we can use synchronized method to synchronize threads
+                                                        // It will consume a lot of time to execute if we have 1000 lines of codes
+                                                        // So It will be better if we use Synchronize block used here
+         System.out.println(Thread.currentThread().getName());
+         System.out.println(Thread.currentThread().getName());
+         System.out.println(Thread.currentThread().getName());
+         System.out.println(Thread.currentThread().getName());
+         System.out.println(Thread.currentThread().getName());
+         System.out.println(Thread.currentThread().getName());
+         System.out.println(Thread.currentThread().getName());
+         System.out.println(Thread.currentThread().getName());
+
+        synchronized (this){                        // This is an example of Synchronize block  only this code has to executed by different thread separately
+
+             if (totalSeat>=seat){
+                 System.out.println(Thread.currentThread().getName()+ " Seats Booked Successfully");
+                 totalSeat=totalSeat-seat;
+                 System.out.println(totalSeat+" Seats left");
+            }
+
+             else{
+
+                 System.out.println(Thread.currentThread().getName()+" Seat Cannot be booked");
+                 System.out.println(totalSeat+" Seats Left");
+             }
+        }
+         System.out.println(Thread.currentThread().getName());
+         System.out.println(Thread.currentThread().getName());
+         System.out.println(Thread.currentThread().getName());
+         System.out.println(Thread.currentThread().getName());
+    }
+}
+class MovieBookAPP extends Thread{
+    static BookTheatreSeat b;
+    int seats;
+    @Override
+    public void run() {
+
+        b.bookSeat(seats);
+
+    }
+
+    public static void main(String[] args) {
+        b= new BookTheatreSeat();
+        MovieBookAPP obj = new MovieBookAPP();
+        obj.seats=4;
+        obj.start();
+
+        MovieBookAPP amit = new MovieBookAPP();
+        amit.seats=3;
+        amit.start();
+
+    }
+}
+
+
+
+
+
+OUTPUT
+
+
+"C:\Program Files\Eclipse Foundation\jdk-11.0.12.7-hotspot\bin\java.exe" "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2021.2.1\lib\idea_rt.jar=55744:C:\Program Files\JetBrains\IntelliJ IDEA 2021.2.1\bin" -Dfile.encoding=UTF-8 -classpath C:\Users\Asus\IdeaProjects\String\out\production\String MovieBookAPP
+Thread-1
+Thread-1
+Thread-1
+Thread-1
+Thread-1
+Thread-1
+Thread-1
+Thread-1
+Thread-0
+Thread-0
+Thread-0
+Thread-0
+Thread-0
+Thread-0
+Thread-0
+Thread-0
+Thread-1 Seats Booked Successfully
+7 Seats left
+Thread-1
+Thread-0 Seats Booked Successfully
+Thread-1
+Thread-1
+Thread-1
+3 Seats left
+Thread-0
+Thread-0
+Thread-0
+Thread-0
+
+Process finished with exit code 0
+
+
+
+
+
+
