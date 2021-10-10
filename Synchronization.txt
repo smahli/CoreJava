@@ -3,6 +3,51 @@ Sunchronization  Introduction
 
 _________________________________
 
+It is the process by which we control the accessability of multiple threads 
+to a particular shared resource
+
+
+2. Problem which can occur without synchronization:
+	1. data inconsistancy
+	2. Thread interference 
+
+
+3. Advantages of synchronization :
+	1. No data inconsistancy 
+	2. No thread interference 
+
+4. Disadvantages of synchronization:
+
+	1. Increases the wating time period of threads 
+	2. Create performance problems 
+	3.Deadlock
+
+To overcome synchronization disadvantages , java provides pne package i.e. java.util.concurrent
+
+
+
+
+TYpes of Synchronization
+
+
+1. Process Synchronization (Not present in Java MultiThreading )
+2. Thread Synchronization 
+	1.Mutual Exclusive 
+		Can be achieved by 3 Ways 
+		1. By Synchronization Method
+		2. By Synchronization
+		3. By Static Synchronization
+
+	2.Coopration
+		Can be achieved by following methods of object class
+		wait()
+		notify()
+		notifyAll()
+
+
+
+
+
 
 This Example Code Explains Why we need Synchronization
 
