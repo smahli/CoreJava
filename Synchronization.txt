@@ -2,3 +2,63 @@ Sunchronization  Introduction
 
 
 _________________________________
+
+
+This Example Code Explains Why we need Synchronization
+
+
+
+import java.lang.Thread;
+public class BookTheatreSeat {
+    int totalSeat =10;
+    void bookSeat(int seat){
+        if (totalSeat>=seat){
+            System.out.println("Seats Booked Successfully");
+            totalSeat=totalSeat-seat;
+            System.out.println(totalSeat+" Seats left");
+
+        }
+
+        else{
+            System.out.println(totalSeat+" Seats Left");
+            System.out.println("Seat Cannot be booked");
+        }
+
+    }
+}
+class MovieBookAPP extends Thread{
+    static BookTheatreSeat b;
+    int seats;
+    @Override
+    public void run() {
+
+        b.bookSeat(seats);
+
+    }
+
+    public static void main(String[] args) {
+        b= new BookTheatreSeat();
+        MovieBookAPP obj = new MovieBookAPP();
+        obj.seats=6;
+        obj.start();
+
+        MovieBookAPP amit = new MovieBookAPP();
+        amit.seats=7;
+        amit.start();
+
+    }                   // Data Inconsistency is occurring in this program
+}
+
+
+
+
+OUTPUT   
+
+
+"C:\Program Files\Eclipse Foundation\jdk-11.0.12.7-hotspot\bin\java.exe" "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2021.2.1\lib\idea_rt.jar=63417:C:\Program Files\JetBrains\IntelliJ IDEA 2021.2.1\bin" -Dfile.encoding=UTF-8 -classpath C:\Users\Asus\IdeaProjects\String\out\production\String MovieBookAPP
+Seats Booked Successfully
+Seats Booked Successfully
+4 Seats left
+-3 Seats left
+
+Process finished with exit code 0
