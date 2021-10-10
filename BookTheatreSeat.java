@@ -1,17 +1,18 @@
 import java.lang.Thread;
 public class BookTheatreSeat {
     int totalSeat =10;
-    void bookSeat(int seat){
+     synchronized void bookSeat(int seat){
         if (totalSeat>=seat){
-            System.out.println("Seats Booked Successfully");
+            System.out.println(Thread.currentThread().getName()+ " Seats Booked Successfully");
             totalSeat=totalSeat-seat;
             System.out.println(totalSeat+" Seats left");
 
         }
 
         else{
+
+            System.out.println(Thread.currentThread().getName()+" Seat Cannot be booked");
             System.out.println(totalSeat+" Seats Left");
-            System.out.println("Seat Cannot be booked");
         }
 
     }
@@ -29,12 +30,12 @@ class MovieBookAPP extends Thread{
     public static void main(String[] args) {
         b= new BookTheatreSeat();
         MovieBookAPP obj = new MovieBookAPP();
-        obj.seats=6;
+        obj.seats=4;
         obj.start();
 
         MovieBookAPP amit = new MovieBookAPP();
-        amit.seats=7;
+        amit.seats=3;
         amit.start();
 
-    }                   // Data Inconsistency is occurring in this program
+    }
 }
