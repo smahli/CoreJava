@@ -1,3 +1,4 @@
+import java.lang.Thread;
 public class BookTheatreSeat {
     int totalSeat =10;
     void bookSeat(int seat){
@@ -27,5 +28,13 @@ class MovieBookAPP extends Thread{
 
     public static void main(String[] args) {
         b= new BookTheatreSeat();
-    }
+        MovieBookAPP obj = new MovieBookAPP();
+        obj.seats=6;
+        obj.start();
+
+        MovieBookAPP amit = new MovieBookAPP();
+        amit.seats=7;
+        amit.start();
+
+    }                   // Data Inconsistency is occurring in this program
 }
