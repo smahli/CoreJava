@@ -1,0 +1,55 @@
+Inter-Thread Communication 
+_____________________________
+
+
+Inter-Thread communication is a mechanism in which a thread releases the lock and enter inti paused state
+and another thread qcquires the lock and continue to executed.
+It is implemented by following method of Object  class:
+
+1. wait() : if any thread calls the wait() method it causes the current thread to release the lock and wait 
+until another thread invokes the notify() or notifyAll() method for this object or a specified amount of time has elapsed
+
+
+2. notify(): This method is used to wake up a single thread and releases the object lock
+ 
+3. NotifyALL(): This methid is used to wake up all threads that are in waiting state.
+
+
+NOTE:  To call wait(), notify(), or notifyAll() method on any object , Thread should own the lock
+of that object that is the thread should be inside synchronized  area.
+
+
+
+
+
+if we dont use All above then we got following problems 
+
+import java.lang.Thread;
+class Thread3 extends Thread{
+    int total=0;
+    @Override
+    public void run() {
+        for(int i=1;i<=10;i++){
+            total = total+100;
+        }
+    }
+}
+public class TotalEarning extends Thread {
+    public static void main(String[] args) {
+
+    Thread3 t3 = new Thread3();
+    t3.start();
+        System.out.println(" Total earning : "+ t3.total+ " Rs");
+    }
+}
+
+
+
+OUTPUT
+________
+
+
+"C:\Program Files\Eclipse Foundation\jdk-11.0.12.7-hotspot\bin\java.exe" "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2021.2.1\lib\idea_rt.jar=55719:C:\Program Files\JetBrains\IntelliJ IDEA 2021.2.1\bin" -Dfile.encoding=UTF-8 -classpath C:\Users\Asus\IdeaProjects\AdvanceJava\out\production\AdvanceJava TotalEarning
+ Total earning : 0 Rs
+
+Process finished with exit code 0
