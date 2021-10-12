@@ -1,0 +1,104 @@
+INHERITANCE 
+_______________
+
+
+It is inheriting the properties of parent class into child class
+
+
+OR in other words Inheritance is the procedure by which one objects acquires all the properties and behaviours
+of parent object 
+
+
+coding Example
+
+_________________
+
+class Animal{
+    void eat(){
+        System.out.println("I am eating ");
+    }
+}
+public class SimpleInheritance  {
+
+    public static void main(String[] args) {
+        SimpleInheritance s = new SimpleInheritance();
+        s.eat();
+    }
+
+}
+
+
+OUTPUT
+_________
+
+
+
+C:\Users\Asus\IdeaProjects\Inheritance\src\SimpleInheritance.java:10:10
+java: cannot find symbol
+  symbol:   method eat()
+  location: variable s of type SimpleInheritance
+
+
+
+we will get this error.
+
+
+
+same problem can be solved 
+
+Code Example
+
+
+
+class Animal{
+    void eat(){
+        System.out.println("I am eating ");
+    }
+}
+public class SimpleInheritance extends  Animal  {
+
+    public static void main(String[] args) {
+        SimpleInheritance s = new SimpleInheritance();
+        s.eat();
+    }
+
+}
+
+OUTPUT
+_________
+
+
+"C:\Program Files\Eclipse Foundation\jdk-11.0.12.7-hotspot\bin\java.exe" "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2021.2.1\lib\idea_rt.jar=52700:C:\Program Files\JetBrains\IntelliJ IDEA 2021.2.1\bin" -Dfile.encoding=UTF-8 -classpath C:\Users\Asus\IdeaProjects\Inheritance\out\production\Inheritance SimpleInheritance
+I am eating 
+
+Process finished with exit code 0
+
+
+
+ADVANTAGES OF INHERITANCE 
+
+___________________________________
+ Code reusability
+
+We can achieve Method overriding / polymorphism can be achieved 
+
+
+
+DISADVANTAGES OF INHERITANCE 
+_____________________________
+
+
+Parent and child class tightly coupled 
+
+if we change the program so it will affect other programs as well.
+
+
+
+TYPES OF INHERITANCE
+
+
+
+
+
+
+
