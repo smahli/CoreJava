@@ -288,6 +288,98 @@ Process finished with exit code 0
 
 
 
+Static synchronization example code
+
+
+
+
+import java.lang.Thread;
+class BookTheaterApp{
+    static int total_seat =20;
+    synchronized static void   bookSeat( int seats){
+
+
+        if(total_seat>=seats){
+            System.out.println(seats +" : Seats Booked Successfully");
+            total_seat= total_seat-seats;
+            System.out.println("seats left " +total_seat);
+
+        }
+
+        else{
+            System.out.println(seats+ "  Seats cannot be booked ");
+            System.out.println("Because only "+ total_seat+ "  seats left ");
+        }
+
+    }
+}
+
+class MyThread1 extends Thread{
+    BookTheaterApp b;
+    int seats;
+    MyThread1(BookTheaterApp b,int seats){
+        this.b=b;
+        this.seats=seats;
+    }
+
+    @Override
+    public void run() {
+        b.bookSeat(seats);
+    }
+}
+
+class MyThread2 extends Thread{
+    BookTheaterApp b;
+    int seats;
+    MyThread2(BookTheaterApp b,int seats){
+        this.b=b;
+        this.seats=seats;
+    }
+
+    @Override
+    public void run() {
+        b.bookSeat(seats);
+    }
+}
+
+public class MultiThread {
+    public static void main(String[] args) {
+        BookTheaterApp b1 = new BookTheaterApp();
+        MyThread1 t1 = new MyThread1(b1,7);
+        t1.start();
+        MyThread2 t2 = new MyThread2(b1,8);
+        t2.start();
+
+        BookTheaterApp b2 = new BookTheaterApp();
+        MyThread1 t3 = new MyThread1(b2,6);
+        t3.start();
+        MyThread2 t4= new MyThread2(b2,5);
+        t4.start();
+
+
+
+    }
+
+
+
+
+}
+
+
+
+OUTPUT
+------------------------
+"C:\Program Files\Eclipse Foundation\jdk-11.0.12.7-hotspot\bin\java.exe" "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2021.2.1\lib\idea_rt.jar=49657:C:\Program Files\JetBrains\IntelliJ IDEA 2021.2.1\bin" -Dfile.encoding=UTF-8 -classpath C:\Users\Asus\IdeaProjects\AdvanceJava\out\production\AdvanceJava MultiThread
+7 : Seats Booked Successfully
+seats left 13
+5 : Seats Booked Successfully
+seats left 8
+6 : Seats Booked Successfully
+seats left 2
+8  Seats cannot be booked 
+Because only 2  seats left 
+
+Process finished with exit code 0
 
 
 
