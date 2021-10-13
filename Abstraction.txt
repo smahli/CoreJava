@@ -25,7 +25,165 @@ Achieved by
 	2. A method must always be declared in an abstract class, or we can say that
 	if a class has an abstract method , it should be declared abstract as well.
 	3.If a regular class extends an abstract class, then the class must have to implement
-	all the abstract methods of abstract parebt class or it has to be declared abstract as well. 
+	all the abstract methods of abstract parent class or it has to be declared abstract as well. 
 	4.Abstract methods in an abstract class are meant to be overriden in derived 
 	concrete classes otherwise compile time error will be thrown.
-	5. Abstract classes cannot be instantiated , means we can;;'t create an object of Abtract class.
+	5. Abstract classes cannot be instantiated , means we can't create an object of Abtract class.
+
+
+
+Example
+
+Abstract Class Vehicle {
+	int No_Of_Tyres ;     //  Variable created But details are hidden
+	abstract Strat();		// Method created but implementation details are hidden
+
+}
+
+
+
+Car extends Vehicle{
+	int No_Of_Tyres=4 ;
+	Strat(){
+		System.out.println("Starts With Key");
+	}
+
+
+
+}
+
+
+class Scooter extends Vehicle{
+	int No_Of_Tyres=2 ;
+	Strat(){
+		System.out.println("Starts With Kick");
+	}
+
+	
+
+
+}
+
+
+
+
+
+Abstract Code Exmample
+
+_____________________________
+
+
+
+public abstract class Vehicle {
+    int no_of_Tyres;
+
+    abstract void start();
+}
+class Car extends Vehicle{
+    @Override
+    void start() {
+        System.out.println(" Car Starts with Key");
+    }
+}
+
+class Scooter extends Vehicle{
+    @Override
+    void start() {
+        System.out.println(" Scooter starts with kick");
+    }
+
+    public static void main(String[] args) {
+        //Vehicle v= new Vehicle();    // Why because Vehicle is abstract it cannot be instantiated mean we cannot create object of abstract class
+        Car c = new Car();
+        Scooter s = new Scooter();
+        c.start();
+        s.start();
+    }
+}
+
+
+
+
+OUTPUT
+_________________________
+
+
+"C:\Program Files\Eclipse Foundation\jdk-11.0.12.7-hotspot\bin\java.exe" "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2021.2.1\lib\idea_rt.jar=56948:C:\Program Files\JetBrains\IntelliJ IDEA 2021.2.1\bin" -Dfile.encoding=UTF-8 -classpath C:\Users\Asus\IdeaProjects\Inheritance\out\production\Inheritance Scooter
+ Car Starts with Key
+ Scooter starts with kick
+
+Process finished with exit code 0
+
+
+
+
+INTERFACE
+________________
+
+public interface InterfaceExample {
+
+
+    int Var=10;  // compiler automatically adds public static final
+    public static final int Var2 =20;
+   abstract  public  void display();
+  // protected abstract void Display();  // modifier protected not allowed here
+ //   default  abstract void show();    // default and abstract illegal combination
+   /* void display(){
+        // interface abstract method cannot have bodies
+    }*/
+
+
+    default  void Show(){
+        System.out.println("Default method having body is allowed ");
+    }
+
+
+    static  void Dis(){
+        System.out.println(" Static method having body is allowed here");
+    }
+
+}
+ interface InterfaceExample2{
+    void Show2();
+
+}
+class Test implements InterfaceExample,InterfaceExample2{
+    /* void display(){
+        System.out.println("Interface Example");   // attempting to assign weaker access privileges ; was public
+    }*/                                             // we need to declare same method access modifier as It was in Interface
+
+     public  void display() {
+        System.out.println("Interface Example");
+    }
+
+    @Override
+    public void Show2() {
+        System.out.println(" Multiple inheritance As Show2 is overridden and Implements via second interface");
+    }
+
+    public static void main(String[] args) {
+        // InterfaceExample i1 = new InterfaceExample()// Interface is abstract cannot be instantiated or object cannot be created
+
+
+        Test t = new Test();
+        t.display();
+        t.Show2();
+
+    }
+}
+
+
+
+OUTPUT
+_____________________
+
+"C:\Program Files\Eclipse Foundation\jdk-11.0.12.7-hotspot\bin\java.exe" "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2021.2.1\lib\idea_rt.jar=55235:C:\Program Files\JetBrains\IntelliJ IDEA 2021.2.1\bin" -Dfile.encoding=UTF-8 -classpath C:\Users\Asus\IdeaProjects\Inheritance\out\production\Inheritance Test
+Interface Example
+ Multiple inheritance As Show2 is overridden and Implements via second interface
+
+Process finished with exit code 0
+
+
+
+
+
